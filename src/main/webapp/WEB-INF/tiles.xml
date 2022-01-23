@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+
+<!DOCTYPE tiles-definitions PUBLIC 
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- Name used here must be same everywhere template is the path layout.jsp 
+		is main page if value="" this means different pages can come there it isn't 
+		fixed -->
+
+	<definition name="base" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp"></put-attribute>
+		<put-attribute name="menu" value=""></put-attribute>
+		<!-- <put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp"></put-attribute> -->
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp"></put-attribute>
+	</definition>
+
+	<!-- Here we have to extends the base for other pages This means we just 
+		need to create body and title part and other parts are fixed -->
+
+	<definition name="home" extends="base">
+		<put-attribute name="title" value="Home"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/home.jsp"></put-attribute>
+	</definition>
+
+	<!-- Second page -->
+
+	<definition name="login" extends="base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp"></put-attribute>
+	</definition>
+
+	<definition name="register" extends="base">
+		<put-attribute name="title" value="Register"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/register.jsp"></put-attribute>
+	</definition>
+
+	<definition name="addCandidate" extends="base">
+		<put-attribute name="title" value="Add Candidate"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/addCandidate.jsp"></put-attribute>
+	</definition>
+
+	<definition name="fetchCandidate" extends="base">
+		<put-attribute name="title" value="Add Candidate"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/fetchCandidate.jsp"></put-attribute>
+	</definition>
+
+	<definition name="updateCandidate" extends="base">
+		<put-attribute name="title" value="Add Candidate"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/updateCandidate.jsp"></put-attribute>
+	</definition>
+
+	<definition name="viewAll" extends="base">
+		<put-attribute name="title" value="View All"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/viewAll.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions> 
